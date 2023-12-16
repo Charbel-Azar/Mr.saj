@@ -66,7 +66,12 @@ https://matchthemes.com
 	--headings-h6-size: 16px;
 }
 
-
+@font-face {
+  font-family: Dancing;
+  src: url('../caverta/DancingScript-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+} 
 
 /*************************************
 
@@ -2170,7 +2175,7 @@ padding-right:15px;}
 
 .single-post-content img, .custom-page-template img{ height: auto;
     max-width: 100%;}
-.single-post-content h1, .single-post-content h2, .single-post-content h3, .single-post-content h4, .single-post-content h5, .single-post-content h6{margin-bottom:12px;}	
+.single-post-content h1, .single-post-content h2, .single-post-content h3, .single-post-content h4, .single-post-content h5, .single-post-content h6{margin-bottom:12px; font-family: Dancing !important;}	
 
 /* comments + contact fields */
 .comm-field, .contact-field, #msg-contact {width:100%;
