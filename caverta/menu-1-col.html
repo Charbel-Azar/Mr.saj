@@ -105,6 +105,10 @@
                                  <div class="menu-text">Bread, Kawarma</div>
                               </li>
                               <li>
+                                 <h4><span class="menu-title">Tolme &amp; Kawarma</span><span class="menu-price">LBP 350,000</span></h4>
+                                 <div class="menu-text"></div>
+                              </li>
+                              <li>
                                  <h4><span class="menu-title">Kawarma &amp;Labneh</span><span class="menu-price">LBP 400,000</span></h4>
                                  <div class="menu-text">Bread, Kawarma, Labneh</div>
                               </li>
@@ -153,6 +157,10 @@
                                  <div class="menu-text">Bread, Mozarella, Halloum, Khashkawan, Cheddar</div>
                               </li>
                               <li>
+                                 <h4><span class="menu-title">Mr Saj Cheese</span><span class="menu-price">LBP 300,000</span></h4>
+                                 <div class="menu-text">Akawi, Feta, Mozzarella &amp; Onion &amp; Mint</div>
+                              </li>
+                              <li>
                                  <h4><span class="menu-title">Jebneh  &amp; Harra</span><span class="menu-price">LBP 250,000</span></h4>
                                  <div class="menu-text">Bread, Mozarella, Chilli Paste</div>
                               </li>
@@ -165,7 +173,7 @@
                                  <div class="menu-text">Bread, Mozarella, Meat</div>
                               </li>
                               <li>
-                                 <h4><span class="menu-title">Stretched Cheese</span><span class="menu-price">LBP 250,000</span></h4>
+                                 <h4><span class="menu-title">Jebneh Machrouha</span><span class="menu-price">LBP 300,000</span></h4>
                                  <div class="menu-text">Bread, Stretched Cheese</div>
                               </li>
                               <li>
@@ -195,6 +203,10 @@
                               <li>
                                  <h4><span class="menu-title">Labneh  &amp; Khodra</span><span class="menu-price">LBP 200,000</span></h4>
                                  <div class="menu-text">Bread, Labneh, Tomato, Mint, Olives</div>
+                              </li>
+                              <li>
+                                 <h4><span class="menu-title">Chanklish</span><span class="menu-price">LBP 300,000</span></h4>
+                                 <div class="menu-text"></div>
                               </li>
                               <li>
                                  <h4><span class="menu-title">Labneh Sahen</span><span class="menu-price">LBP 450,000</span></h4>
@@ -232,6 +244,10 @@
                               <li>
                                  <h4><span class="menu-title">Zaatar Extra</span><span class="menu-price">LBP 100,000</span></h4>
                                  <div class="menu-text">Bread, Thyme, Tomato, Mint, Olives</div>
+                              </li>
+                              <li>
+                                 <h4><span class="menu-title">Tolme &amp; Zeit</span><span class="menu-price">LBP 100,000</span></h4>
+                                 <div class="menu-text"></div>
                               </li>
                               <li>
                                  <h4><span class="menu-title">Zaatar with Tomato and Onion</span><span class="menu-price">LBP 100,000</span></h4>
@@ -286,6 +302,15 @@
                               <li>
                                  <h4><span class="menu-title">Choco-Banana</span><span class="menu-price">LBP 200,000</span></h4>
                                  <div class="menu-text">Bread, Chocolate, Banana</div>
+                              </li>
+                              <li class="js-dessert-price" data-base-price="200000" data-step-price="50000">
+                                 <h4><span class="menu-title">Chocolat aa Zaweak</span><span class="menu-price">LBP 200,000</span></h4>
+                                 <div class="menu-text">Choose: Mars / Galaxy / Kinder<br>Mix: +LBP 50,000 per additional chocolate</div>
+                                 <div class="menu-options">
+                                    <label class="menu-option"><input type="checkbox" name="dessert-choc"> Mars</label>
+                                    <label class="menu-option"><input type="checkbox" name="dessert-choc"> Galaxy</label>
+                                    <label class="menu-option"><input type="checkbox" name="dessert-choc"> Kinder</label>
+                                 </div>
                               </li>
                         
                            </ul>
@@ -451,6 +476,39 @@
       <script src='js/jquery.magnific-popup.min.js'></script>
       <!-- MAIN JS -->
       <script src='js/init.js'></script>
+      <script>
+         (function () {
+            var item = document.querySelector('.js-dessert-price');
+            if (!item) {
+               return;
+            }
+            var base = parseInt(item.getAttribute('data-base-price'), 10);
+            var step = parseInt(item.getAttribute('data-step-price'), 10);
+            var priceEl = item.querySelector('.menu-price');
+            var checkboxes = item.querySelectorAll('input[type="checkbox"]');
+
+            function formatLBP(value) {
+               return 'LBP ' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            }
+
+            function updatePrice() {
+               var count = 0;
+               var i;
+               for (i = 0; i < checkboxes.length; i++) {
+                  if (checkboxes[i].checked) {
+                     count++;
+                  }
+               }
+               var total = base + Math.max(0, count - 1) * step;
+               priceEl.textContent = formatLBP(total);
+            }
+
+            for (var j = 0; j < checkboxes.length; j++) {
+               checkboxes[j].addEventListener('change', updatePrice);
+            }
+            updatePrice();
+         })();
+      </script>
    </body>
 
 <!-- Mirrored from matchthemes.com/demohtml/caverta/menu-1-col.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Dec 2023 13:59:53 GMT -->
