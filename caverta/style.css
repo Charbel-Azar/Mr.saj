@@ -2119,7 +2119,8 @@ flex:1 1 auto;}
 .slide-3{background-image:url('images/pages-top/slider-3.jpg');}
 
 /* Top Pages Image */
-.top-menu-1col, .top-menu-2col, .top-menu-3col, .top-menu-acc, .top-menu-5{background-image:url('images/pages-top/menu-img.jpg');}
+.top-menu-1col{background-image:url('new images/main.jpeg');}
+.top-menu-2col, .top-menu-3col, .top-menu-acc, .top-menu-5{background-image:url('images/pages-top/menu-img.jpg');}
 .top-reservation{background-image:url('images/pages-top/reservation-page.jpg');}
 .top-blog-classic, .top-blog-list, .top-blog-grid-2cols, .top-blog-grid-3cols, .top-blog-single-page{background-image:url('images/pages-top/blog-img.jpg');}
 .top-team-2cols, .top-team-3cols, .top-team-4cols{background-image:url('images/pages-top/team-page.jpg');}
